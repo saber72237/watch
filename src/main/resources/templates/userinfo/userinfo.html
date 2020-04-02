@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-hans" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>智能健康手环-测量心率，体温，脉搏，定位</title>
+    <meta name="description" content="智能手表-实时测量心率、脉搏、体温、位置，记录您身体的每时每刻，为您打造健康生活！">
+    <meta name="Keywords" content="智能手表，测量心率，测量脉搏，测量体温，实时定位">
+    <!--禁止移动端缩放网页-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/base.css}" href="css/base.css">
+    <link rel="stylesheet" th:href="@{/css/userinfo.css}" href="css/login.css">
+</head>
+<body>
+
+<!--背景图片-->
+<img id="bg" class="bg" th:src="@{img/index_bg_xl.jpg}" src="../images/index_bg_xl.jpg">
+<!--导航栏-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div th:replace="~{data/heart::navbar}"></div>
+</nav>
+<!--内容-->
+<div class="container-fluid content">
+    <div class="row justify-content-center">
+        <div class="col-sm-10 col-md-8 col-lg-8 col-xl-6">
+            <div class="card">
+                <div class="card-header"><h5>用户信息</h5>
+                    <a th:href="@{#}"><button type="button" class="btn btn-outline-primary btn-sm">修改</button></a></div>
+                <div class="card-body">
+                    <div class="username">
+                        <span class="title">用户名</span>
+                        <span class="text" th:text="${user.user}"></span>
+                    </div>
+                    <hr>
+                    <div class="username">
+                        <span class="title">邮箱</span>
+                        <span class="text" th:text="${user.userEmail}"></span>
+                    </div>
+                    <hr>
+                    <div class="username">
+                        <span class="title">电话</span>
+                        <span class="text" th:text="${user.userTel}"></span>
+                    </div>
+                    <hr>
+                    <div class="username">
+                        <span class="title">姓名</span>
+                        <span class="text" th:text="${user.userName}"></span>
+                    </div>
+                    <hr>
+                    <div class="username">
+                        <span class="title">性别</span>
+                        <span class="text" th:text="${user.userGender}"></span>
+                    </div>
+                    <hr>
+                    <div class="username">
+                        <span class="title">年龄</span>
+                        <span class="text" th:text="${user.userAge}"></span>
+                    </div>
+                    <hr>
+                    <div class="username">
+                        <span class="title">血型</span>
+                        <span class="text" th:text="${user.userBT}"></span>
+                    </div>
+                    <hr>
+                    <div class="username">
+                        <span class="title">民族</span>
+                        <span class="text" th:text="${user.userNation}"></span>
+                    </div>
+                    <hr>
+                    <div class="username">
+                        <span class="title">家属联系方式</span>
+                        <span class="text" th:text="${user.userFT}"></span>
+                    </div>
+                    <hr>
+                    <div class="username">
+                        <span class="title">住址</span>
+                        <span class="text" th:text="${user.userAdress}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--页脚-->
+<div th:replace="~{data/heart::footerbar}"></div>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

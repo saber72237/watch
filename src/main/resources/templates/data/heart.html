@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-hans" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>智能健康手环-测量心率，体温，脉搏，定位</title>
+    <meta name="description" content="智能健康手环-实时测量心率、脉搏、体温、位置，记录您身体的每时每刻，为您打造健康生活！">
+    <meta name="Keywords" content="智能健康手环，测量心率，测量脉搏，测量体温，实时定位">
+    <!--禁止移动端缩放网页-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/base.css}" href="css/base.css">
+    <link rel="stylesheet" th:href="@{/css/heart.css}" href="css/login.css">
+    <script th:src="@{js/heart.js}" src="js/login.js"></script>
+    <script th:src="@{js/echarts.js}" src="js/echarts.min.js"></script>
+</head>
+<body>
+
+<!--背景图片-->
+<img id="bg" class="bg" th:src="@{img/index_bg_xl.jpg}" src="../images/index_bg_xl.jpg">
+<!--导航栏-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container" th:fragment="navbar">
+        <a class="navbar-brand" href="#">
+            <img th:src="@{img/logo.png}">智能手表
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/main.html}">心率 </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/oxygen}">血氧</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/temperature}">体温</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" name="mapform" th:href="@{/map}">位置</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        UserName
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" th:href="@{#}">找客服聊聊&nbsp;</a>
+                        <a class="dropdown-item" th:href="@{/userinfo}">用户信息</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" th:href="@{/update}">修改密码</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" th:href="@{/quit}">登出</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--内容-->
+<div class="container content">
+    <div class="card">
+        <div class="card-header text-center"><h5>心率记录图</h5></div>
+        <div class="card-body" th:fragment="content">
+            <div class="heart" th:id="chart" id="chart"></div>
+            <script th:src="@{js/heart.js}" src="js/heart.js"></script>
+        </div>
+        <div class="card-footer text-muted text-right" th:fragment="doctor">
+            <a href="#" class="btn btn-primary">询问个人医生</a>
+        </div>
+    </div>
+</div>
+<!--页脚-->
+<div class="footer" th:fragment="footerbar">
+    <span>邮箱：smart@watch.com</span>
+    <span>电话：000-000-0000</span>
+    <p>版权所有 2020 LP</p>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
