@@ -1,6 +1,6 @@
 var myChart = echarts.init(document.getElementById('chart'));
-var min = 95;
-var max = 99;
+var min = 36;
+var max = 38;
 var myDate = new Date();
 var myDate1 = new Date();
 myDate1.setUTCMinutes(1);
@@ -49,15 +49,6 @@ myDate22.setUTCMinutes(22);
 var myDate23 = new Date();
 myDate23.setUTCMinutes(23);
 
-var random = parseInt(min,10);
-var random1 = parseInt(min,10);
-var random2 = parseInt(min,10);
-var random3 = parseInt(min,10);
-var random4 = parseInt(min,10);
-var random5 = parseInt(min,10);
-var random6 = parseInt(min,10);
-var random7 = parseInt(min,10);
-var random8 = parseInt(min,10);
 var category = new Array(myDate1, myDate2, myDate3, myDate4,
     myDate5, myDate6, myDate7, myDate8,
     myDate9, myDate10, myDate,myDate11, myDate12,
@@ -76,10 +67,12 @@ option = {
     yAxis: {
         type: 'value',
         // scale: true
-        // min: function (value) {
+         min: 36,
+        // function (value) {
         //     return value.min - 20;
         // },
-        // max: function (value) {
+         max:40
+        //     function (value) {
         //     return value.max +20;
         // }
     },
@@ -96,12 +89,12 @@ option = {
         },
         markLine: {
             data: [
-                {yAxis: 40, name: '40摄氏度', itemStyle: {
+                {yAxis: 38, name: '40摄氏度', itemStyle: {
                         normal: {
                             color: 'orange'
                         }
                     }},
-                {yAxis: 30, name: '30摄氏度', itemStyle: {
+                {yAxis: 36, name: '30摄氏度', itemStyle: {
                         normal: {
                             color: 'orange'
                         }

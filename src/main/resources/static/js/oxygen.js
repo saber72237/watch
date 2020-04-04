@@ -48,16 +48,6 @@ var myDate22 = new Date();
 myDate22.setUTCMinutes(22);
 var myDate23 = new Date();
 myDate23.setUTCMinutes(23);
-
-var random = parseInt(Math.random()*(max-min)*10+min,10);
-var random1 = parseInt(Math.random()*(max-min)*10+min,10);
-var random2 = parseInt(Math.random()*(max-min)*10+min,10);
-var random3 = parseInt(Math.random()*(max-min)*10+min,10);
-var random4 = parseInt(Math.random()*(max-min)*10+min,10);
-var random5 = parseInt(Math.random()*(max-min)*10+min,10);
-var random6 = parseInt(Math.random()*(max-min)*10+min,10);
-var random7 = parseInt(Math.random()*(max-min)*10+min,10);
-var random8 = parseInt(Math.random()*(max-min)*10+min,10);
 var category = new Array(myDate1, myDate2, myDate3, myDate4,
     myDate5, myDate6, myDate7, myDate8,
     myDate9, myDate10, myDate,myDate11, myDate12,
@@ -76,10 +66,12 @@ option = {
     yAxis: {
         type: 'value',
         // scale: true
-        // min: function (value) {
+        min: 90,
+        // function (value) {
         //     return value.min - 20;
         // },
-        // max: function (value) {
+        max:100
+        //    function (value) {
         //     return value.max +20;
         // }
     },
